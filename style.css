@@ -202,3 +202,18 @@ h1 {
     font-size: 1.6rem;
   }
 }
+/* WINNING BOX EFFECT */
+.box.win {
+  background: linear-gradient(135deg, #00f260, #0575e6) !important;
+  color: #fff !important;
+  box-shadow:
+    0 0 20px #00f260,
+    0 0 40px #0575e6;
+  animation: winPop 0.6s ease;
+}
+
+@keyframes winPop {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}

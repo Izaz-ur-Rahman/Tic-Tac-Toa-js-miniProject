@@ -18,6 +18,7 @@ let winningPattern = [
         [2,5,8],
         [3,4,5],
         [6,7,8],
+         [2,4,6],
 ];
 
 
@@ -54,12 +55,15 @@ const checkWinner = () =>{
         let position3 = boxes[pattern[2]].innerText;
         if(position1 != "" && position2 != "" && position3 != "" )
         {
-            if(position1 === position2 && position2 === position3)
-            {
-              //  console.log("you are the winner");
-               showWinnerMsg(position1);  // calling show winning function 
+           if (position1 === position2 && position2 === position3) {
 
-            }
+  boxes[pattern[0]].classList.add("win");
+  boxes[pattern[1]].classList.add("win");
+  boxes[pattern[2]].classList.add("win");
+
+  showWinnerMsg(position1);
+}
+
         }
     }
 }
@@ -91,6 +95,8 @@ const enableBoxes = () => {
     {
         enableBox.disabled = false;
         enableBox.innerText = "";
+        enableBox.classList.remove("win");
+
 
     }
 }
